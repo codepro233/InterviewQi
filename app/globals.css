@@ -1,26 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-navy-950: #0A0F1E;
+  --color-navy-900: #0D1221;
+  --color-navy-800: #111827;
+  --color-navy-700: #1A2035;
+  --color-navy-600: #1E2A3A;
+  --color-navy-500: #2A3550;
+
+  --color-blue-accent: #4F8EF7;
+  --color-blue-muted: #4F8EF740;
+  --color-blue-glow: #4F8EF720;
+
+  --color-text-primary: #F0F4FF;
+  --color-text-secondary: #8A9BB5;
+  --color-text-muted: #3A4A6A;
+
+  --color-success: #34D399;
+  --color-warning: #FBBF24;
+  --color-danger: #F87171;
+
+  --font-display: "'Space Grotesk'", system-ui, sans-serif;
+  --font-body: "'Inter'", system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0A0F1E;
+  color: #F0F4FF;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #1A2035; }
+::-webkit-scrollbar-thumb { background: #2A3550; border-radius: 4px; }
+
+:focus-visible {
+  outline: 2px solid #4F8EF7;
+  outline-offset: 2px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(79, 142, 247, 0); }
+  50%       { box-shadow: 0 0 0 8px rgba(79, 142, 247, 0.12); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-up  { animation: fadeUp 0.4s ease both; }
+.animate-fade-in  { animation: fadeIn 0.3s ease both; }
+.animate-spin     { animation: spin 1s linear infinite; }
