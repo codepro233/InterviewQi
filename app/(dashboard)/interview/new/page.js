@@ -168,3 +168,4 @@ export default function NewInterviewPage() {
     </div>
   );
 }
+export const dynamic = 'force-dynamic';
