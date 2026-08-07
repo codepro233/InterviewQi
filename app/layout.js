@@ -18,13 +18,11 @@ export const metadata = {
   ],
   authors:  [{ name: "InterviewIQ" }],
   creator:  "InterviewIQ",
-  metadataBase: new URL(
-    process.env.NEXTAUTH_URL ?? "http://localhost:3000"
-  ),
+  metadataBase: new URL("https://interview-qi.vercel.app"),
   openGraph: {
     type:        "website",
     locale:      "en_NG",
-    url:         process.env.NEXTAUTH_URL,
+    url:         "https://interview-qi.vercel.app",
     title:       "InterviewIQ — AI Interview Coach",
     description: "Practice real job interviews with AI. Get instant per-answer feedback.",
     siteName:    "InterviewIQ",
